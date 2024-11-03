@@ -22,7 +22,7 @@ body {
   /* Hover effect for grid cells */
   .grid-cell:hover {
     background-color: #cccccc; /* Slightly darker shade */
-    transform: translateY(-3px); /* Moves cell up slightly */
+    transform: scale(1.05); /* Makes cell slightly larger */
   }
   
   
