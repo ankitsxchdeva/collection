@@ -1,0 +1,142 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #ffffff;
+  }
+  
+  .grid {
+    display: grid;
+    gap: 5px;
+    justify-content: center;
+  }
+  
+  .grid-cell {
+    background-color: #e0e0e0;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  /* Hover effect for grid cells */
+  .grid-cell:hover {
+    background-color: #cccccc; /* Slightly darker shade */
+    transform: translateY(-3px); /* Moves cell up slightly */
+  }
+  
+  
+  /* Default grid for larger screens */
+  @media (min-width: 768px) {
+    .grid {
+      grid-template-columns: repeat(10, 60px);
+      grid-template-rows: repeat(10, 60px);
+    }
+  
+    .grid-cell {
+      width: 60px;
+      height: 60px;
+    }
+  }
+  
+  /* Medium screens */
+  @media (min-width: 480px) and (max-width: 767px) {
+    .grid {
+      grid-template-columns: repeat(10, 40px);
+      grid-template-rows: repeat(10, 40px);
+    }
+  
+    .grid-cell {
+      width: 40px;
+      height: 40px;
+    }
+  }
+  
+  /* Small screens */
+  @media (max-width: 479px) {
+    .grid {
+      grid-template-columns: repeat(10, 30px);
+      grid-template-rows: repeat(10, 30px);
+    }
+  
+    .grid-cell {
+      width: 30px;
+      height: 30px;
+    }
+  }
+  
+/* Style for the info panel */
+.info-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 90vw; /* Ensures panel width fits within viewport */
+    max-width: 1080px; /* Optional: max width for larger screens */
+  }
+  
+  /* Keycap image styling */
+  #keycap-image {
+    display: block; /* Ensures it behaves like a block element */
+    width: 100%; /* Makes image take full width of the container */
+    max-width: 90vw; /* Fit within viewport width */
+    max-height: 80vh; /* Prevents vertical overflow */
+    object-fit: contain;
+    margin-bottom: 15px; /* Adds space between image and link */
+  }
+  
+  /* Styling for the Keycap Archivist link */
+  #keycap-link {
+    display: block; /* Forces link to take full width and stack below image */
+    font-size: 1rem;
+    color: #333;
+    text-decoration: none;
+    margin-top: 10px;
+    transition: color 0.3s;
+  }
+  
+  #keycap-link:hover {
+    color: #555; /* Hover effect */
+  }
+  
+  
+  
+  
+/* Style for the back button */
+.back-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  border: none;
+  background-color: transparent;
+  color: #333;
+  font-size: 1.2rem; /* Make the button slightly larger */
+  padding: 10px 20px;
+  cursor: pointer;
+  outline: none;
+  font-family: Arial, sans-serif;
+  display: inline-flex;
+  align-items: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s, transform 0.3s;
+  z-index: 1000; /* Ensure it stays on top */
+}
+
+.back-button:hover {
+  color: #555;
+  transform: translateX(-3px);
+}
+
+.back-button::before {
+  content: "← BACK";
+  margin-right: 8px;
+  font-size: 2rem;
+  transition: transform 0.3s;
+}
+
+.back-button:hover::before {
+  transform: translateX(-2px);
+}
+
+  
